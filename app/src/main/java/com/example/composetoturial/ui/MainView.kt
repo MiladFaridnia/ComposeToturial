@@ -28,6 +28,10 @@ fun MainView() {
             mutableStateOf("Milad Agha Milad")
         }
 
+        var isViewVisible by rememberSaveable {
+            mutableStateOf(false)
+        }
+
 //        var buttonTitle by rememberSaveable {
 //            mutableStateOf("Milad Agha Milad")
 //        }
@@ -46,13 +50,22 @@ fun MainView() {
                 "Agha Bardia is the best"
             }
 
+            isViewVisible = isViewVisible.not()
+
             Toast.makeText(context, "Button Clicked", Toast.LENGTH_LONG).show()
         })
         {
-            Text(
-                text = buttonTitle,
-                color = Color.Green
-            )
+            if (isViewVisible)
+                Text(
+                    text = buttonTitle,
+                    color = Color.Green
+                )
+            else
+                Text(
+                    text = buttonTitle + " Not",
+                    color = Color.Yellow
+                )
+
         }
 
         Spacer(
@@ -61,9 +74,16 @@ fun MainView() {
                 .padding(16.dp)
         )
 
-        ShowText(buttonTitle)
-        ShowText("Hello Milad")
-        ShowText("Hi Agha Bardia")
+
+        if (isViewVisible) {
+            ShowText("Hello Milad Not Visible")
+
+        } else {
+            ShowText(buttonTitle)
+            ShowText("Hello Milad Visible")
+            ShowText("Hi Agha Bardia")
+        }
+
 
         Spacer(
             modifier = Modifier
