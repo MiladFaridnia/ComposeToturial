@@ -1,6 +1,7 @@
 package com.example.composetoturial.ui
 
 import android.widget.Toast
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,13 +29,13 @@ fun MainView() {
             mutableStateOf("Milad Agha Milad")
         }
 
+        //        var buttonTitle by rememberSaveable {
+//            mutableStateOf("Milad Agha Milad")
+//        }
+
         var isViewVisible by rememberSaveable {
             mutableStateOf(false)
         }
-
-//        var buttonTitle by rememberSaveable {
-//            mutableStateOf("Milad Agha Milad")
-//        }
 
         Spacer(
             modifier = Modifier
@@ -53,19 +54,24 @@ fun MainView() {
             isViewVisible = isViewVisible.not()
 
             Toast.makeText(context, "Button Clicked", Toast.LENGTH_LONG).show()
-        })
-        {
-            if (isViewVisible)
-                Text(
-                    text = buttonTitle,
-                    color = Color.Green
-                )
-            else
-                Text(
-                    text = buttonTitle + " Not",
-                    color = Color.Yellow
-                )
+        }
+        ) {
 
+            AnimatedVisibility(visible = isViewVisible) {
+                Text(text = buttonTitle, color = Color.Green)
+            }
+
+            AnimatedVisibility(visible = isViewVisible.not()) {
+                Text(
+                    text = buttonTitle, color = Color.Yellow
+                )
+            }
+
+//            if (isViewVisible.not()){
+//                Text(
+//                    text = buttonTitle, color = Color.Yellow
+//                )
+//            }
         }
 
         Spacer(
