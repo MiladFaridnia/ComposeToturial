@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.composetoturial.ui.MainView
+import com.example.composetoturial.ui.list_sample.ListView
 import com.example.composetoturial.ui.theme.ComposeToturialTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +12,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeToturialTheme {
-               MainView()
+               ListView()
             }
         }
     }
