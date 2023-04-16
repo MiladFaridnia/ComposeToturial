@@ -19,7 +19,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun PersonItemView(
     person: Person,
-    onItemClick: (name: Person) -> Unit
+    familyNames: List<Family>,
+    onItemClick: ((name: Person, family: Family) -> Unit)? = null
 ) {
 
     var backgroundColor by remember {
@@ -30,9 +31,9 @@ fun PersonItemView(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
-            .clickable {
-                onItemClick(person)
-            }
+//            .clickable {
+//                onItemClick(person)
+//            }
     ) {
 
         Spacer(
@@ -50,7 +51,7 @@ fun PersonItemView(
         )
 
         LazyRow(modifier = Modifier.height(50.dp)) {
-            items(items = horizontalListItems) { itemName ->
+            items(items = familyNames) { familyItem ->
                 Row(
                     modifier = Modifier
                         .fillMaxHeight()
@@ -62,13 +63,13 @@ fun PersonItemView(
                                 backgroundColor =
                                     if (backgroundColor == Color.Yellow) Color.Green else Color.Yellow
                             },
-                        text = itemName
+                        text = familyItem.name
                     )
 
                     Checkbox(
-                        checked = person.isSelected,
+                        checked = familyItem.isFamilySelected,
                         onCheckedChange = {
-                            onItemClick(person)
+                            onItemClick?.invoke(person, familyItem)
                         })
                 }
 
@@ -83,5 +84,9 @@ fun PersonItemView(
 @Preview(showBackground = true)
 @Composable
 private fun NameItemPreview() {
-    PersonItemView(person = Person("Milad", true)) {}
+    PersonItemView(
+        person = Person("Milad", true),
+        familyNames = listOf(Family("Milad", true)),
+        onItemClick = null
+    )
 }
