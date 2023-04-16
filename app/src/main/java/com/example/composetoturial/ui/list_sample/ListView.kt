@@ -24,14 +24,16 @@ data class Person(
     val isSelected: Boolean
 )
 
-
-val horizontalListItems = listOf("Faridnia", "Fard", "Farid", "The Others")
+data class Family(
+    val name: String,
+    val isFamilySelected: Boolean
+)
 
 @Composable
 fun ListView() {
     val context = LocalContext.current
 
-    var personList by rememberSaveable {
+    val personList by rememberSaveable {
         mutableStateOf(
             listOf(
                 Person("Milad", true),
@@ -41,6 +43,18 @@ fun ListView() {
             )
         )
     }
+
+    var horizontalListItems by rememberSaveable {
+        mutableStateOf(
+            listOf(
+                Family("Faridnia", true),
+                Family("Fard", false),
+                Family("Farid", false),
+                Family("The Others Family", true)
+            )
+        )
+    }
+
 
     LazyColumn(
         modifier = Modifier
@@ -62,14 +76,25 @@ fun ListView() {
 
         items(items = personList) { person ->
             PersonItemView(
-                person = person
-            ) { clickedPerson ->
+                person = person,
+                familyNames = horizontalListItems
+            ) { clickedPerson :Person , clickedFamily: Family ->
 
-                personList = personList.map { mappedPerson ->
+                /*personList = personList.map { mappedPerson ->
                     if (clickedPerson.name == mappedPerson.name) {
                         person.copy(isSelected = clickedPerson.isSelected.not())
                     } else {
-                        person
+                        mappedPerson
+                    }
+                }*/
+
+                horizontalListItems = horizontalListItems.map { mappedFamily ->
+                    if (clickedFamily.name == mappedFamily.name) {
+                        clickedFamily.copy(
+                            isFamilySelected = clickedFamily.isFamilySelected.not()
+                        )
+                    } else {
+                        mappedFamily
                     }
                 }
 
