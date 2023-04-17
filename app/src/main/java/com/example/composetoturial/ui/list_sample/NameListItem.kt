@@ -1,5 +1,6 @@
 package com.example.composetoturial.ui.list_sample
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -22,6 +24,8 @@ fun PersonItemView(
     familyNames: List<Family>,
     onItemClick: ((name: Person, family: Family) -> Unit)? = null
 ) {
+
+    val context = LocalContext.current
 
     var backgroundColor by remember {
         mutableStateOf(Color.Green)
@@ -77,6 +81,27 @@ fun PersonItemView(
         }
 
         Divider()
+
+        Column(
+            modifier = Modifier.fillMaxSize()
+                .padding(15.dp)
+
+                .clickable {
+                    Toast.makeText(context,"Yellow",Toast.LENGTH_SHORT).show()
+                }
+                .background(Color.Yellow)
+                .padding(15.dp)
+                .clickable {
+                    Toast.makeText(context,"Magenta",Toast.LENGTH_SHORT).show()
+                }
+                .background(Color.Magenta)
+                .padding(15.dp)
+                .background(Color.Green)
+                .clickable {
+                    Toast.makeText(context,"Green",Toast.LENGTH_SHORT).show()
+                }
+                .padding(15.dp)
+        ) {}
     }
 
 }
