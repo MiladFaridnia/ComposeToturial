@@ -1,10 +1,7 @@
-package com.example.composetoturial.ui
+package com.example.composetoturial.ui.main
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideOut
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.ui.tooling.preview.Preview
