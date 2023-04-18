@@ -15,9 +15,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.composetoturial.ui.previews.ThemePreview
+import com.example.composetoturial.ui.theme.ComposeToturialTheme
 
 data class Person(
     val name: String,
@@ -78,7 +79,7 @@ fun ListView() {
             PersonItemView(
                 person = person,
                 familyNames = horizontalListItems
-            ) { clickedPerson :Person , clickedFamily: Family ->
+            ) { clickedPerson: Person, clickedFamily: Family ->
 
                 /*personList = personList.map { mappedPerson ->
                     if (clickedPerson.name == mappedPerson.name) {
@@ -104,8 +105,10 @@ fun ListView() {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@ThemePreview
 @Composable
 fun DefaultPreview() {
-    ListView()
+    ComposeToturialTheme(darkTheme = true) {
+        ListView()
+    }
 }
