@@ -12,33 +12,31 @@ import com.example.composetoturial.ui.wellness.model.WellnessTask
 @Composable
 fun WellnessTaskList(
     modifier: Modifier = Modifier,
-    listItems: List<WellnessTask> = remember {
-        getWellnessElements()
-    }
+    listItems: List<WellnessTask>,
+    onTaskCheckChange: (WellnessTask) -> Unit,
+    onTaskCloseClick: (WellnessTask) -> Unit
 ) {
-
-    var checkedState by remember {
-        mutableStateOf(false)
-    }
 
     LazyColumn() {
         items(listItems) { item ->
             WellnessTaskItem(
                 wellnessTask = item,
-                onCloseClick = {},
-                onCheckChange = { newValue -> checkedState = newValue },
-                checkedState = checkedState,
+                onCloseClick = onTaskCloseClick,
+                onCheckChange = onTaskCheckChange,
                 modifier = modifier
             )
         }
     }
 }
 
-fun getWellnessElements() = List(50) { i -> WellnessTask(i, "Task $i") }
-
-
 @Preview
 @Composable
 private fun WellnessTaskListPreview() {
-    WellnessTaskList()
+    WellnessTaskList(
+        listItems = remember {
+            getWellnessElements()
+        },
+        onTaskCloseClick = {},
+        onTaskCheckChange = {}
+    )
 }
