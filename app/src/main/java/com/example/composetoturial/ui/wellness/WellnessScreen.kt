@@ -9,7 +9,7 @@ import com.example.composetoturial.ui.previews.ThemePreview
 fun WellnessScreen(modifier: Modifier = Modifier) {
 
     Column(modifier = modifier) {
-//        StatefulCounter()
+        StatefulCounter()
         WellnessTaskList()
     }
 }
