@@ -39,6 +39,6 @@ fun getWellnessElements() = List(50) { i -> WellnessTask(i, "Task $i") }
 
 @Preview
 @Composable
-fun WellnessTaskListPreview() {
+private fun WellnessTaskListPreview() {
     WellnessTaskList()
 }
