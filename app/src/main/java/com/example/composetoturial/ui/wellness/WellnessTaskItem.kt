@@ -1,5 +1,6 @@
 package com.example.composetoturial.ui.wellness
 
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,7 +14,6 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.composetoturial.ui.previews.ThemePreview
 import com.example.composetoturial.ui.wellness.model.WellnessTask
@@ -21,10 +21,9 @@ import com.example.composetoturial.ui.wellness.model.WellnessTask
 @Composable
 fun WellnessTaskItem(
     wellnessTask: WellnessTask,
-    checkedState: Boolean,
     modifier: Modifier,
-    onCheckChange: ((Boolean) -> Unit)?,
-    onCloseClick: () -> Unit,
+    onCheckChange: (WellnessTask) -> Unit,
+    onCloseClick: (WellnessTask) -> Unit,
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
@@ -39,9 +38,14 @@ fun WellnessTaskItem(
                 .padding(8.dp)
         )
 
-        Checkbox(checked = checkedState, onCheckedChange = onCheckChange)
+        Log.d("Milad", "3- wellnessTask.checked $wellnessTask.checked ")
 
-        IconButton(onClick = onCloseClick) {
+        Checkbox(
+            checked = wellnessTask.checked,
+            onCheckedChange = { onCheckChange(wellnessTask) }
+        )
+
+        IconButton(onClick = { onCloseClick(wellnessTask) }) {
             Icon(
                 Icons.Default.Close,
                 contentDescription = "Delete"
@@ -54,8 +58,7 @@ fun WellnessTaskItem(
 @Composable
 private fun DefaultPreview() {
     WellnessTaskItem(
-        wellnessTask = WellnessTask(1, "new"),
-        checkedState = true,
+        wellnessTask = WellnessTask(1, "new", false),
         modifier = Modifier,
         onCheckChange = {},
         onCloseClick = {})
