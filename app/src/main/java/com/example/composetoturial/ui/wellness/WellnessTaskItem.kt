@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.composetoturial.ui.previews.ThemePreview
+import com.faridnia.designsystem.previews.ThemePreview
 import com.example.composetoturial.ui.wellness.model.WellnessTask
 
 @Composable

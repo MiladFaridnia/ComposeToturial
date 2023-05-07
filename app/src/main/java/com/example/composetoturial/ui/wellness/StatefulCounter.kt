@@ -12,7 +12,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.composetoturial.ui.previews.ThemePreview
+import com.faridnia.designsystem.previews.ThemePreview
 
 @ThemePreview
 @Composable

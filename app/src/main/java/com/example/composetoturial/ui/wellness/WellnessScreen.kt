@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composetoturial.ui.previews.ThemePreview
+import com.faridnia.designsystem.previews.ThemePreview
 
 
 @Composable

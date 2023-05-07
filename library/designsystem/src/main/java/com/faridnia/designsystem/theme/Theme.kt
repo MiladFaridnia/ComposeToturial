@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.theme
+package com.faridnia.designsystem.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

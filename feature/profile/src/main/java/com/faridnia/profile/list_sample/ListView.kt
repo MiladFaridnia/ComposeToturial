@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.list_sample
+package com.faridnia.profile.list_sample
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.composetoturial.ui.previews.ThemePreview
-import com.example.composetoturial.ui.theme.ComposeToturialTheme
+import com.faridnia.designsystem.previews.ThemePreview
+import com.faridnia.designsystem.theme.ComposeToturialTheme
 
 data class Person(
     val name: String,

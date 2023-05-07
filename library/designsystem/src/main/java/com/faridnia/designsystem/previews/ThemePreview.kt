@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.previews
+package com.faridnia.designsystem.previews
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview

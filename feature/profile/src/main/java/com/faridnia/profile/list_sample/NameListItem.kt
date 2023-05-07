@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.list_sample
+package com.faridnia.profile.list_sample
 
 import android.widget.Toast
 import androidx.compose.foundation.background
