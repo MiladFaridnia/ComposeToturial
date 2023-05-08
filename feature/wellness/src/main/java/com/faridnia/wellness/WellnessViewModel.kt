@@ -1,7 +1,7 @@
-package com.example.composetoturial.ui.wellness
+package com.faridnia.wellness
 
 import androidx.lifecycle.ViewModel
-import com.example.composetoturial.ui.wellness.model.WellnessTask
+import com.faridnia.wellness.model.WellnessTask
 
 class WellnessViewModel : ViewModel() {
 

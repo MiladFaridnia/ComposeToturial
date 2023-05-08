@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.composetoturial.ui.main.MainView
-import com.example.composetoturial.ui.wellness.WellnessScreen
+import com.faridnia.wellness.WellnessScreen
 
 
 @Composable

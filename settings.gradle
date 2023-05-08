@@ -16,3 +16,4 @@ rootProject.name = "ComposeToturial"
 include ':app'
 include ':feature:profile'
 include ':library:designsystem'
+include ':feature:wellness'

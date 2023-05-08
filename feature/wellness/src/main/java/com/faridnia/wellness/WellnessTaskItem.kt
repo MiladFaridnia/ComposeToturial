@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.wellness
+package com.faridnia.wellness
 
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.faridnia.designsystem.previews.ThemePreview
-import com.example.composetoturial.ui.wellness.model.WellnessTask
+import com.faridnia.wellness.model.WellnessTask
 
 @Composable
 fun WellnessTaskItem(

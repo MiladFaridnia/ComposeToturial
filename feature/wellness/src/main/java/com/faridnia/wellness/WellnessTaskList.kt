@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.wellness
+package com.faridnia.wellness
 
 
 import androidx.compose.foundation.lazy.LazyColumn
@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.composetoturial.ui.wellness.model.WellnessTask
+import com.faridnia.wellness.model.WellnessTask
 
 
 @Composable

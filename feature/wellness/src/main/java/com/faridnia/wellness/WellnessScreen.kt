@@ -1,4 +1,4 @@
-package com.example.composetoturial.ui.wellness
+package com.faridnia.wellness
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
